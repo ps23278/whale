@@ -1,0 +1,53 @@
+#version: '3.8'
+##Cai dat va cau hinh mot cach nhanh hon ma khong can phai tai nhieu
+##Chi can su dung lenh -- chi can viet mot so dong co the configs cho cai db cua chung ta
+##
+services:
+  # Cấu hình cho PostgreSQL
+  #environment la moi truong
+  #image la phien ban
+  #container_name thi chi la 1 cai name thoi thich dat sao dat
+  #restart la khi nao cai DB nay bi loi thi no se tu dong reset lai de xem bi loi nhu nao
+#  postgres_db:
+#    image: postgres:14.1-alpine
+#    container_name: postgres_container
+#    environment:
+#      POSTGRES_USER: admin
+#      POSTGRES_PASSWORD: password123
+#      POSTGRES_DB: my_postgres_db
+#    ports:
+#      - "5434:5432"
+#    volumes:
+#      - postgres_data:/var/lib/postgresql/data
+#    restart: always
+
+  # Cấu hình cho MySQL
+  mysql_db:
+    image: mysql:8.4
+    container_name: mysql_whale
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: whale_db
+      MYSQL_USER: whale_user
+      MYSQL_PASSWORD: noluc01
+    ports:
+      - "3309:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    restart: always
+  # Volumes giup chung ta luu du lieu, neu khong co Volumes thi moi khi chay lai Docker thi no se reset lai data
+  # Cấu hình cho Redis
+#  redis:
+#    image: redis:7-alpine
+#    container_name: redis_container
+#    ports:
+#      - "6379:6379"
+#    command: redis-server --appendonly yes
+#    volumes:
+#      - redis_data:/data
+#    restart: always
+#
+volumes:
+  postgres_data:
+  mysql_data:
+  redis_data:
