@@ -3,6 +3,7 @@ package com.tbland.whale.controller.rest;
 import com.tbland.whale.dto.record.BrandRequest;
 import com.tbland.whale.dto.record.BrandResponse;
 import com.tbland.whale.service.BrandService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,12 +27,12 @@ public class BrandRestController {
         return brandService.findById(id);
     }
     @PostMapping
-    public BrandResponse create(@RequestBody BrandRequest request){
+    public BrandResponse create(@Valid @RequestBody BrandRequest request){
         return brandService.create(request);
     }
     @PutMapping("/{id}")
     public BrandResponse update(@PathVariable Integer id,
-                        @RequestBody BrandRequest request){
+                                @Valid @RequestBody BrandRequest request){
         return brandService.update(id,request);
     }
     @DeleteMapping("/{id}")

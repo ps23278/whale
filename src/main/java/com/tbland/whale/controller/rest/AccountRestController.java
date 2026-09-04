@@ -1,7 +1,9 @@
 package com.tbland.whale.controller.rest;
 
-import com.tbland.whale.entity.Account;
+import com.tbland.whale.dto.record.AccountRequest;
+import com.tbland.whale.dto.record.AccountResponse;
 import com.tbland.whale.service.AccountService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,28 +19,28 @@ public class AccountRestController{
     }
 
     @GetMapping
-    public List<Account> getAll(){
+    public List<AccountResponse> getAll(){
         return accountService.getAll();
     }
     @GetMapping("/{id}")
-    public Account getById(@PathVariable Integer id){
+    public AccountResponse getById(@Valid @PathVariable Integer id){
         return accountService.getById(id);
     }
     @PostMapping
-    public Account create(@RequestBody Account account){
-        return accountService.create(account);
+    public AccountResponse create(@RequestBody AccountRequest request){
+        return accountService.create(request);
     }
     @PutMapping("/{id}")
-    public Account update(@PathVariable Integer id,
-                          @RequestBody Account account){
-        return accountService.update(id,account);
+    public AccountResponse update( @PathVariable Integer id,
+                                   @Valid @RequestBody AccountRequest request){
+        return accountService.update(id,request);
     }
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Integer id){
         accountService.delete(id);
     }
     @GetMapping("/email")
-    public Account findByEmail(@RequestParam String email){
+    public AccountResponse findByEmail(@RequestParam String email){
         return accountService.findByEmail(email);
     }
 

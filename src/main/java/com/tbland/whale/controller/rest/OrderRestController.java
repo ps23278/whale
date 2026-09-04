@@ -1,7 +1,10 @@
 package com.tbland.whale.controller.rest;
 
+import com.tbland.whale.dto.record.OrderRequest;
+import com.tbland.whale.dto.record.OrderResponse;
 import com.tbland.whale.entity.Order;
 import com.tbland.whale.service.OrderService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,20 +19,21 @@ public class OrderRestController {
         this.orderService = orderService;
     }
     @GetMapping
-    public List<Order> getAll(){
+    public List<OrderResponse> getAll(){
         return orderService.getAll();
     }
     @GetMapping("/{id}")
-    public Order findById(@PathVariable Integer id){
+    public OrderResponse findById(@PathVariable Integer id){
         return orderService.findById(id);
     }
     @PostMapping
-    public Order create(@RequestBody Order order){
-        return orderService.create(order);
+    public OrderResponse create(@Valid @RequestBody OrderRequest request){
+        return orderService.create(request);
     }
     @PutMapping("/{id}")
-    public Order update(@PathVariable Integer id, @RequestBody Order order){
-        return orderService.update(id,order);
+    public OrderResponse update(@PathVariable Integer id,
+                                @Valid @RequestBody OrderRequest request){
+        return orderService.update(id,request);
     }
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Integer id){

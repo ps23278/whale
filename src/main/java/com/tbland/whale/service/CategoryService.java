@@ -1,17 +1,19 @@
 package com.tbland.whale.service;
 
+import com.tbland.whale.dto.record.CategoryRequest;
+import com.tbland.whale.dto.record.CategoryResponse;
 import com.tbland.whale.entity.Category;
 
 import java.util.List;
 
 public interface CategoryService {
-    List<Category> getAll();
+    List<CategoryResponse> getAll();
 
-    Category getById(Integer id);
+    CategoryResponse getById(Integer id);
 
-    Category  create(Category category);
+    CategoryResponse  create(CategoryRequest request);
 
-    Category update(Integer id, Category category);
+    CategoryResponse update(Integer id, CategoryRequest reqest);
 
     void delete(Integer id);
 

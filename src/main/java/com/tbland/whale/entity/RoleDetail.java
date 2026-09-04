@@ -23,7 +23,7 @@ public class RoleDetail {
     @ManyToOne
     //1 account co the co nhieu roledetails thong qua account_id
     @JoinColumn(name="account_id")
-    private Account acount;
+    private Account account;
     @ManyToOne
     //1 role co the co nhieu roledetaials thong qua role_id
     @JoinColumn(name="role_id")

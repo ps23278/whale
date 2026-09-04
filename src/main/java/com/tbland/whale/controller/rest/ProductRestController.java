@@ -4,6 +4,7 @@ import com.tbland.whale.dto.record.ProductRequest;
 import com.tbland.whale.dto.record.ProductResponse;
 import com.tbland.whale.entity.Product;
 import com.tbland.whale.service.ProductService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,12 +28,12 @@ public class ProductRestController {
 
     }
     @PostMapping
-    public ProductResponse create(@RequestBody ProductRequest request){
+    public ProductResponse create(@Valid @RequestBody ProductRequest request){
         return productService.create(request);
     }
     @PutMapping("/{id}")
     public ProductResponse update(@PathVariable Integer id,
-                          @RequestBody ProductRequest request){
+                          @Valid @RequestBody ProductRequest request){
         return productService.update(id,request);
     }
     @DeleteMapping("/{id}")

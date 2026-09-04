@@ -11,7 +11,7 @@ public record AccountRequest(
         @NotBlank
         @Email
         String email,
-        String phot,
-        boolean activatied
+        String photo,
+        boolean activated
 ) {
 }

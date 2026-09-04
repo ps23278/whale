@@ -1,21 +1,23 @@
 package com.tbland.whale.service;
 
+import com.tbland.whale.dto.record.AccountRequest;
+import com.tbland.whale.dto.record.AccountResponse;
 import com.tbland.whale.entity.Account;
 
 import java.util.List;
 
 public interface AccountService {
-    List<Account> getAll();
+    List<AccountResponse> getAll();
 
-    Account getById(Integer id);
+    AccountResponse getById(Integer id);
 
-    Account create(Account account);
+    AccountResponse create(AccountRequest request);
 
-    Account update(Integer id, Account account);
+    AccountResponse update(Integer id, AccountRequest request);
 
     void delete(Integer id);
 
-    Account findByEmail(String email);
+    AccountResponse findByEmail(String email);
 
 
 }

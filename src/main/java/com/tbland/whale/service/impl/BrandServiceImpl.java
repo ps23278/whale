@@ -3,6 +3,7 @@ package com.tbland.whale.service.impl;
 import com.tbland.whale.dto.record.BrandRequest;
 import com.tbland.whale.dto.record.BrandResponse;
 import com.tbland.whale.entity.Brand;
+import com.tbland.whale.exception.ResourceNotFoundException;
 import com.tbland.whale.mapper.BrandMapper;
 import com.tbland.whale.repository.BrandRepository;
 import com.tbland.whale.service.BrandService;
@@ -34,10 +35,9 @@ public class BrandServiceImpl implements BrandService {
     @Override
     public BrandResponse findById(Integer id) {
         Brand brand = brandRepository.findById(id)
-                .orElse(null);
-        if(brand==null){
-            return null;
-        }
+                .orElseThrow(()->
+                        new ResourceNotFoundException("Không tìm thấy Id của brand: "+id)
+                );
         return brandMapper.toResponse(brand);
     }
 
@@ -52,10 +52,9 @@ public class BrandServiceImpl implements BrandService {
     @Override
     public BrandResponse update(Integer id, BrandRequest request) {
         Brand brand = brandRepository.findById(id)
-                .orElse(null);
-        if (brand == null){
-            return null;
-        }
+                .orElseThrow(()->
+                        new ResourceNotFoundException("Không tìm thấy Id của brand: "+id)
+                        );
         brand.setName(request.name());
         brand.setImage(request.image());
 

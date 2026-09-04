@@ -1,17 +1,19 @@
 package com.tbland.whale.service;
 
+import com.tbland.whale.dto.record.OrderRequest;
+import com.tbland.whale.dto.record.OrderResponse;
 import com.tbland.whale.entity.Order;
 
 import java.util.List;
 
 public interface OrderService {
-    List<Order> getAll();
+    List<OrderResponse> getAll();
 
-    Order findById(Integer id);
+    OrderResponse findById(Integer id);
 
-    Order create(Order order);
+    OrderResponse create(OrderRequest request);
 
-    Order update(Integer id, Order order);
+    OrderResponse update(Integer id, OrderRequest request);
 
     void delete(Integer id);
 
