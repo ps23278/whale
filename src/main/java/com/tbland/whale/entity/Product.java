@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Entity
 @Data
@@ -25,5 +26,10 @@ public class Product {
         @ManyToOne
         @JoinColumn(name="brand_id")
         private Brand brand;
+        @OneToMany(mappedBy = "product")
+        private List<ProductImage> productImages;
+        @OneToMany(mappedBy = "product")
+        private List<ProductCategory> productCategories;
+
 
 }

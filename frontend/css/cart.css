@@ -1,0 +1,361 @@
+/* ============================= */
+/* BREADCRUMB */
+/* ============================= */
+
+.breadcrumb-area {
+    background-color: #f5f5f5;
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb-area .container {
+    font-size: 16px;
+}
+
+.breadcrumb-area span {
+    color: #555;
+}
+
+.breadcrumb-area .separator {
+    margin: 0 12px;
+    color: #aaa;
+}
+
+.breadcrumb-area .current {
+    color: #888;
+}
+
+
+/* ============================= */
+/* CART TITLE */
+/* ============================= */
+
+.cart-title {
+    text-align: center;
+    padding-top: 42px;
+    padding-bottom: 38px;
+}
+
+.cart-title h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.cart-title p {
+    font-size: 18px;
+    margin: 0;
+}
+
+.title-line {
+    width: 75px;
+    height: 5px;
+
+    background-color: #292929;
+
+    margin: 34px auto 0;
+}
+
+
+/* ============================= */
+/* CART CONTENT */
+/* ============================= */
+
+.cart-content {
+    padding-bottom: 36px;
+}
+
+.cart-content .container {
+    max-width: 1610px;
+}
+
+
+/* ============================= */
+/* EMPTY CART */
+/* ============================= */
+
+.empty-cart {
+    padding-top: 30px;
+}
+
+.empty-cart p {
+    font-size: 24px;
+    margin: 0;
+}
+
+
+/* ============================= */
+/* ORDER SUMMARY */
+/* ============================= */
+
+.order-summary {
+
+    border: 1px solid #ddd;
+
+    padding: 30px 20px 22px;
+
+    min-height: 355px;
+}
+
+.order-summary h2 {
+    font-size: 27px;
+    font-weight: 700;
+
+    margin-bottom: 18px;
+}
+
+
+/* đường kẻ */
+.summary-line {
+    border-top: 1px dotted #ccc;
+}
+
+
+/* ============================= */
+/* TOTAL */
+/* ============================= */
+
+.summary-row {
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 0;
+
+    border-bottom: 1px dotted #ccc;
+}
+
+.summary-row span {
+    font-size: 20px;
+}
+
+.summary-row strong {
+
+    font-size: 30px;
+
+    color: red;
+
+    font-weight: 500;
+}
+
+
+/* ============================= */
+/* NOTE */
+/* ============================= */
+
+.summary-note {
+
+    margin-top: 21px;
+
+    font-size: 18px;
+
+    line-height: 1.45;
+}
+
+.summary-note p {
+    margin-bottom: 3px;
+}
+
+
+/* ============================= */
+/* CHECKOUT BUTTON */
+/* ============================= */
+
+.checkout-btn {
+
+    width: 100%;
+
+    height: 55px;
+
+    border: none;
+
+    background-color: #ed0505;
+
+    color: white;
+
+    font-size: 20px;
+
+    margin-top: 18px;
+
+    transition: 0.2s;
+}
+
+.checkout-btn:hover:not(:disabled) {
+    background-color: #c90000;
+}
+
+.checkout-btn:disabled {
+    background-color: #ed0505;
+    cursor: not-allowed;
+    opacity: 1;
+}
+
+
+/* ============================= */
+/* CONTINUE SHOPPING */
+/* ============================= */
+
+.continue-shopping {
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 20px;
+
+    color: #9e160d;
+
+    text-decoration: none;
+
+    font-size: 18px;
+}
+
+.continue-shopping:hover {
+    color: #d00000;
+}
+
+.continue-shopping i {
+    font-size: 20px;
+}
+
+
+/* ============================= */
+/* CART ITEM */
+/* ============================= */
+
+.cart-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-item-image {
+
+    width: 130px;
+    height: 130px;
+
+    object-fit: cover;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-name {
+
+    font-size: 19px;
+
+    font-weight: 500;
+
+    margin-bottom: 8px;
+}
+
+.cart-item-price {
+
+    color: #d00000;
+
+    font-size: 18px;
+
+    font-weight: 500;
+}
+
+
+/* ============================= */
+/* QUANTITY */
+/* ============================= */
+
+.quantity-control {
+
+    display: flex;
+
+    align-items: center;
+
+    border: 1px solid #ccc;
+
+    width: fit-content;
+}
+
+.quantity-control button {
+
+    width: 35px;
+    height: 35px;
+
+    border: none;
+
+    background: white;
+
+    font-size: 18px;
+}
+
+.quantity-control span {
+
+    width: 40px;
+
+    text-align: center;
+
+    font-size: 16px;
+}
+
+
+/* ============================= */
+/* REMOVE */
+/* ============================= */
+
+.remove-item {
+
+    border: none;
+
+    background: none;
+
+    color: #888;
+
+    font-size: 20px;
+}
+
+.remove-item:hover {
+    color: red;
+}
+
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media (max-width: 991px) {
+
+    .order-summary {
+        margin-top: 20px;
+    }
+
+}
+
+@media (max-width: 576px) {
+
+    .cart-title h1 {
+        font-size: 32px;
+    }
+
+    .cart-item {
+        flex-wrap: wrap;
+    }
+
+    .cart-item-image {
+        width: 100px;
+        height: 100px;
+    }
+
+}

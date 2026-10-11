@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrapicons/bootstrap-icons.css">
+    <link rel="stylesheet" href="components/header.css">
+    <link rel="stylesheet" href="components/footer.css">
+    <link rel="stylesheet" href="css/productdetail.css">
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <main>
+        <!-- ===== BREADCRUMB ===== -->
+        <div class="product-breadcrumb">
+            Trang chủ / Kim cương nuôi cấy / Kim cương IGI 10.0 li D-VS1
+        </div>
+
+
+        <!-- ===== PRODUCT DETAIL ===== -->
+        <section class="product-detail">
+
+            <!-- ===== LEFT: PRODUCT IMAGES ===== -->
+            <div class="product-gallery">
+
+                <!-- Thumbnail -->
+                <div class="product-thumbnails">
+
+                </div>
+                <!-- Main image -->
+                <div class="product-main-image">
+                    <img id="mainProductImage" src="" alt="Kim cương IGI 10.0 li D-VS1">
+                </div>
+
+            </div>
+
+
+            <!-- ===== RIGHT: PRODUCT INFORMATION ===== -->
+            <div class="product-info">
+
+                <h1 class="product-name">
+                    Kim cương IGI 10.0 li D-VS1
+                </h1>
+
+                <div class="product-price">
+                    88.800.000 ₫
+                </div>
+
+                <p class="product-description">
+                    Kim cương nuôi cấy IGI 10 ly D-VS1 kiểm định quốc tế
+                    IGI. Soi mã số và kiểm tra thông tin trên hệ thống
+                    IGI (International Gemological Institute).
+                </p>
+
+
+                <!-- Quantity + Add cart -->
+                <div class="product-actions">
+
+                    <div class="quantity">
+
+                        <button id="decreaseBtn">−</button>
+
+                        <span id="quantity">1</span>
+
+                        <button id="increaseBtn">+</button>
+
+                    </div>
+
+                    <button class="add-cart-btn" id="addToCartBtn">
+                        Thêm vào giỏ hàng
+                    </button>
+
+                </div>
+
+
+                <!-- Services -->
+                <div class="product-services">
+
+                    <div class="service-item">
+
+                        <i class="bi bi-truck"></i>
+
+                        <span>
+                            Miễn phí ship toàn quốc
+                        </span>
+
+                    </div>
+
+
+                    <div class="service-item">
+
+                        <i class="bi bi-calendar-date"></i>
+
+                        <span>
+                            Order thiết kế riêng chỉ 7 – 10 ngày
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===== PRODUCT INFORMATION ===== -->
+        <section class="product-information">
+
+            <h2>Thông tin sản phẩm</h2>
+
+            <div class="product-specifications">
+
+                <div class="specification">
+                    <span>Mã sản phẩm</span>
+                    <strong id="productId"></strong>
+                </div>
+
+                <div class="specification">
+                    <span>Tên sản phẩm</span>
+                    <strong id="productNameInfo"></strong>
+                </div>
+
+                <div class="specification">
+                    <span>Mã thương hiệu</span>
+                    <strong id="productBrand"></strong>
+                </div>
+
+                <div class="specification">
+                    <span>Số lượng</span>
+                    <strong id="productQuantity"></strong>
+                </div>
+
+                <div class="specification">
+                    <span>Mô tả</span>
+                    <strong id="productDescriptionInfo"></strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===== PRODUCT DESCRIPTION ===== -->
+        <section class="product-description-section">
+
+            <h2>Mô tả sản phẩm</h2>
+
+            <p>
+                Whale cung cấp các sản phẩm kim cương nuôi cấy được
+                kiểm định bởi các tổ chức giám định quốc tế.
+                Mỗi sản phẩm đều có thông tin rõ ràng về màu sắc,
+                độ tinh khiết, kích thước và giấy chứng nhận.
+            </p>
+
+            <p>
+                Khách hàng có thể kiểm tra thông tin sản phẩm dựa
+                trên mã số chứng nhận trước khi đặt hàng.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <div id="footer"></div>
+
+
+    <script>
+        fetch("components/header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header").innerHTML = data;
+            });
+
+
+        fetch("components/footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+            });
+    </script>
+    <script src="js/productdetail.js"> </script>
+
+</body>
+
+</html>

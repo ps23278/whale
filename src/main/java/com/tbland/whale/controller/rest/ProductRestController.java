@@ -22,6 +22,12 @@ public class ProductRestController {
     public List<ProductResponse> getAll(){
       return productService.getAll();
     }
+    @GetMapping("/category/{categoryId}")
+    public List<ProductResponse> getByCategory(
+            @PathVariable Integer categoryId
+    ) {
+        return productService.getByCategory(categoryId);
+    }
     @GetMapping("/{id}")
     public  ProductResponse getById(@PathVariable Integer id){
         return productService.getById(id);
@@ -40,9 +46,11 @@ public class ProductRestController {
     public void delete(@PathVariable Integer id){
         productService.delete(id);
     }
-    @GetMapping("/search/{name}")
-    public  List<ProductResponse> findByName(@PathVariable String name){
-        return productService.searchByName(name);
+    @GetMapping("/search")
+    public  List<ProductResponse> findByName(
+            @RequestParam String keyword
+    ){
+        return productService.searchByName(keyword);
     }
 
 

@@ -9,6 +9,7 @@ public record OrderResponse(
         String status,
         LocalDateTime orderDate,
         BigDecimal totalAmount,
-        Integer accountId
+        Integer accountId,
+        String paymentMethod
         ) {
 }

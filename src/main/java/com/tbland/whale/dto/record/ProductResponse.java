@@ -1,6 +1,7 @@
 package com.tbland.whale.dto.record;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 public record ProductResponse(
         Integer id,
@@ -8,6 +9,7 @@ public record ProductResponse(
         BigDecimal price,
         Integer quantity,
         String description,
-        Integer brandId
+        Integer brandId,
+        List<String> images
 ) {
 }

@@ -46,4 +46,10 @@ public class OrderDetailRestController {
     public void delete(@PathVariable Integer id) {
         orderDetailService.delete(id);
     }
+
+    @GetMapping("/order/{orderId}")
+    public List<OrderDetailResponse> getByOrderId(@PathVariable Integer orderId){
+        return orderDetailService.getByOrderId(orderId);
+    }
+
 }

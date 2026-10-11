@@ -98,7 +98,16 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<ProductResponse> searchByName(String name) {
-        return productRepository.findByNameIgnoreCase(name)
+        return productRepository.findByNameContainingIgnoreCase(name)
+                .stream()
+                .map(productMapper::toResponse)
+                .toList();
+    }
+
+    @Override
+    public List<ProductResponse> getByCategory(Integer categoryId) {
+        return productRepository
+                .findDistinctByProductCategoriesCategoryId(categoryId)
                 .stream()
                 .map(productMapper::toResponse)
                 .toList();

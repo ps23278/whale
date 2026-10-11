@@ -20,5 +20,5 @@ public class Account {
     private String photo;
     private String email;
     private boolean activated;
-
+    
 }

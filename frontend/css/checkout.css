@@ -1,0 +1,192 @@
+
+/* =========================
+   GENERAL
+========================= */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+    color: #222;
+}
+
+.checkout-container {
+    min-height: 80vh;
+}
+
+/* =========================
+   CHECKOUT BOX
+========================= */
+
+.checkout-box {
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    padding: 28px;
+    margin-bottom: 24px;
+}
+
+.section-title {
+    font-family: Georgia, serif;
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-label {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.form-control {
+    border-radius: 0;
+    border: 1px solid #d8d8d8;
+    padding: 12px 14px;
+    font-size: 14px;
+}
+
+.form-control:focus {
+    border-color: #222;
+    box-shadow: none;
+}
+
+
+/* =========================
+   ORDER ITEMS
+========================= */
+
+.checkout-item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 18px 0;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.checkout-item:last-child {
+    border-bottom: none;
+}
+
+.checkout-item-image {
+    width: 85px;
+    height: 85px;
+    object-fit: cover;
+}
+
+.checkout-item-info {
+    flex: 1;
+}
+
+.checkout-item-name {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.checkout-item-price {
+    font-size: 14px;
+    color: #666;
+}
+
+.checkout-item-quantity {
+    font-size: 14px;
+    color: #555;
+    min-width: 50px;
+    text-align: center;
+}
+
+.checkout-item-total {
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 100px;
+    text-align: right;
+}
+
+
+/* =========================
+   ORDER SUMMARY
+========================= */
+
+.order-summary {
+    position: sticky;
+    top: 20px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #555;
+}
+
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 17px;
+}
+
+.summary-total strong {
+    font-size: 20px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+#btnPlaceOrder {
+    border-radius: 0;
+    padding: 13px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#btnPlaceOrder:hover {
+    background-color: #333;
+}
+
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 991px) {
+
+    .order-summary {
+        position: static;
+    }
+
+}
+
+@media (max-width: 576px) {
+
+    .checkout-title {
+        font-size: 32px;
+    }
+
+    .checkout-box {
+        padding: 20px;
+    }
+
+    .checkout-item {
+        align-items: flex-start;
+    }
+
+    .checkout-item-image {
+        width: 70px;
+        height: 70px;
+    }
+
+    .checkout-item-total {
+        min-width: auto;
+    }
+
+}
+

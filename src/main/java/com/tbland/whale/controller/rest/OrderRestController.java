@@ -2,9 +2,12 @@ package com.tbland.whale.controller.rest;
 
 import com.tbland.whale.dto.record.OrderRequest;
 import com.tbland.whale.dto.record.OrderResponse;
+import com.tbland.whale.entity.Account;
 import com.tbland.whale.entity.Order;
+import com.tbland.whale.repository.AccountRepository;
 import com.tbland.whale.service.OrderService;
 import jakarta.validation.Valid;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,9 +17,13 @@ import java.util.List;
 public class OrderRestController {
 
     private final OrderService orderService;
+    private final AccountRepository accountRepository;
 
-    public OrderRestController (OrderService orderService){
+    public OrderRestController (OrderService orderService,
+                                AccountRepository accountRepository)
+    {
         this.orderService = orderService;
+        this.accountRepository = accountRepository;
     }
     @GetMapping
     public List<OrderResponse> getAll(){
@@ -39,6 +46,21 @@ public class OrderRestController {
     public void delete(@PathVariable Integer id){
         orderService.delete(id);
     }
+    @GetMapping("/account/{accountId}")
+    public List<OrderResponse> getByAccountId(@PathVariable Integer accountId){
+        return orderService.getByAccountId(accountId);
+    }
+    @GetMapping("/my-orders")
+    public List<OrderResponse> getMyOrders(Authentication authentication) {
+
+        String email = authentication.getName();
+
+        Account account = accountRepository.findByEmail(email)
+                .orElseThrow(() -> new RuntimeException("Account not found"));
+
+        return orderService.getByAccountId(account.getId());
+    }
+
 
 
 }

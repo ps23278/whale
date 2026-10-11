@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout- Whale</title>
+    <!-- Cart CSS -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="bootstrapicons/bootstrap-icons.css">
+    <link rel="stylesheet" href="components/header.css">
+    <link rel="stylesheet" href="components/footer.css">
+    <!-- <link rel="stylesheet" href="css/order.css"> -->
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header id="header"></header>
+<main class="order-detail-page">
+    <div class="container py-5">
+
+        <!-- TITLE -->
+        <div class="order-detail-title text-center mb-5">
+            <h1>Chi tiết đơn hàng</h1>
+            <p class="text-muted">
+                Thông tin chi tiết đơn hàng của bạn
+            </p>
+        </div>
+
+        <!-- ORDER INFO -->
+        <div id="orderInfo" class="mb-5">
+            <!-- orderdetail.js sẽ render thông tin đơn hàng -->
+        </div>
+
+        <!-- PRODUCT LIST -->
+        <div class="order-products">
+
+            <h4 class="mb-4">
+                Sản phẩm
+            </h4>
+
+            <div id="orderItems">
+                <!-- orderdetail.js sẽ render sản phẩm -->
+            </div>
+
+        </div>
+
+        <!-- TOTAL -->
+        <div class="order-total mt-4">
+            <div class="d-flex justify-content-between align-items-center">
+                <span>Tổng tiền</span>
+
+                <strong id="totalAmount">
+                    0đ
+                </strong>
+            </div>
+        </div>
+
+        <!-- BACK BUTTON -->
+        <div class="mt-4">
+            <a href="order.html" class="btn btn-outline-dark">
+                <i class="bi bi-arrow-left"></i>
+                Quay lại đơn hàng
+            </a>
+        </div>
+
+    </div>
+</main>
+
+
+
+
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer id="footer"></footer>
+    <script>
+        fetch("components/header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header").innerHTML = data;
+
+                // Báo cho index.js biết header đã load xong
+                document.dispatchEvent(new Event("headerLoaded"));
+            });
+
+
+        fetch("components/footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+            });
+    </script>
+    <script src="js/orderdetail.js"></script>
+
+
+
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+
+
+    <!-- ================= JS ================= -->
+
+</body>
+
+</html>

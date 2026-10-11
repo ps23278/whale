@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Whale Admin - Orders</title>
+
+    <link rel="stylesheet" href="css/orderadmin.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <div class="page-header">
+        <h1>Orders</h1>
+    </div>
+
+
+    <!-- Search -->
+    <div class="toolbar">
+
+        <input
+                type="text"
+                id="searchInput"
+                placeholder="Search order..."
+        >
+
+    </div>
+
+
+    <!-- Order table -->
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+            <tr>
+                <th>Order ID</th>
+                <th>Date</th>
+                <th>Customer</th>
+                <th>Total</th>
+                <th>Payment</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+
+            </thead>
+
+            <tbody id="orderTableBody">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+
+<!-- Order detail modal -->
+
+<div id="orderModal" class="modal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h2>Order Details</h2>
+
+            <button id="closeModal">
+                ×
+            </button>
+
+        </div>
+
+
+        <div id="orderDetail">
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="js/orderadmin.js"></script>
+
+</body>
+
+</html>

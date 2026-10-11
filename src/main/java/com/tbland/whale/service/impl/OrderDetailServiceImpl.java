@@ -42,6 +42,14 @@ public class OrderDetailServiceImpl implements OrderDetailService {
     }
 
     @Override
+    public List<OrderDetailResponse> getByOrderId(Integer orderId) {
+        return orderDetailRepository.findByOrderId(orderId)
+                .stream()
+                .map(orderDetailMapper::toResponse)
+                .toList();
+    }
+
+    @Override
     public OrderDetailResponse create(OrderDetailRequest request) {
         OrderDetail orderDetail = orderDetailMapper.toEntity(request);
 

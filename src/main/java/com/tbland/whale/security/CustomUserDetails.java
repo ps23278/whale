@@ -21,6 +21,9 @@ public class CustomUserDetails implements UserDetails {
         this.account = account;
         this.authorities = authorities;
     }
+    public Account getAccount() {
+        return account;
+    }
 
 
     @Override

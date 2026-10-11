@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Table(name="cart_items",
     uniqueConstraints = {
-        @UniqueConstraint(columnNames = {"product_id,cart_id"})
+        @UniqueConstraint(columnNames = {"product_id","cart_id"})
     }
 )
 public class CartItem {

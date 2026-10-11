@@ -9,6 +9,8 @@ import java.util.List;
 public interface OrderService {
     List<OrderResponse> getAll();
 
+    List<OrderResponse> getByAccountId(Integer accountId);
+
     OrderResponse findById(Integer id);
 
     OrderResponse create(OrderRequest request);
@@ -16,5 +18,7 @@ public interface OrderService {
     OrderResponse update(Integer id, OrderRequest request);
 
     void delete(Integer id);
+
+
 
 }

@@ -11,8 +11,10 @@ public class WhaleApplication {
 
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
-        System.out.println(encoder.encode("123"));
-
+        System.out.println(encoder.encode("111111"));
+		System.out.println(encoder.encode("222222"));
+		System.out.println(encoder.encode("333333"));
+		System.out.println(encoder.encode("444444"));
 		SpringApplication.run(WhaleApplication.class, args);
 	}
 

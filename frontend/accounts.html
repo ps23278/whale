@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Whale Admin - Accounts</title>
+
+    <link rel="stylesheet" href="css/accounts.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <div class="page-header">
+
+        <h1>Accounts</h1>
+
+    </div>
+
+
+    <!-- Search -->
+
+    <div class="toolbar">
+
+        <input
+                type="text"
+                id="searchInput"
+                placeholder="Search username or email..."
+        >
+
+    </div>
+
+
+    <!-- Account table -->
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+            <tr>
+                <th>ID</th>
+                <th>Photo</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+
+            </thead>
+
+
+            <tbody id="accountTableBody">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+
+<!-- Account detail modal -->
+
+<div id="accountModal" class="modal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h2>Account Details</h2>
+
+            <button id="closeModal">
+                ×
+            </button>
+
+        </div>
+
+
+        <div id="accountDetail">
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="js/accounts.js"></script>
+
+</body>
+
+</html>

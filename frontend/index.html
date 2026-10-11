@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>whale</title>
+    <title>Fucking whale</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="bootstrapicons/bootstrap-icons.css">
+    <link rel="stylesheet" href="components/header.css">
+    <link rel="stylesheet" href="components/footer.css">
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <section class="main">
+        <section class="category-banner">
+            <img id="categoryBanner" src="images/banners/banner-diamond.png" alt="kim cuong nuoi cay">
+
+        </section>
+
+        <section class="product-section">
+
+            <div class="breadcrumb">
+                Trang chủ / Kim cương nuôi cấy
+            </div>
+
+            <div class="product-toolbar">
+
+                <div class="filter-group">
+                    <span><i class="bi bi-filter"> Lọc theo:</i></span>
+
+                    <div class="filter-wrapper">
+                        <button class="filter-btn" id="brandFilterBtn">
+                            Thương hiệu <i class="bi bi-chevron-down"></i>
+                        </button>
+                        <ul class="filter-dropdown" id="brandDropdown">
+                        </ul>
+
+                    </div>
+                    <div class="filter-wrapper">
+
+
+                        <button class="filter-btn" id="priceFilterBtn">
+                            Khoảng giá <i class="bi bi-chevron-down"></i></button>
+                        <ul id="priceDropdown">
+                            <li data-min="0" data-max="5000000">Dưới 5 triệu</li>
+                            <li data-min="5000000" data-max="10000000">5 - 10 triệu</li>
+                            <li data-min="10000000" data-max="20000000">10 - 20 triệu</li>
+                            <li data-min="20000000" data-max="">Trên 20 triệu</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="sort-group">
+                    <span><i class="bi bi-filter"> Xắp xếp</i></span>
+                    <button>Mặc định</button>
+                </div>
+
+            </div>
+
+            <div class="product-grid" id="productList">
+
+            </div>
+            <div class="pagination" id="pagination"></div>
+
+        </section>
+
+        <section class="diamond-introduction">
+
+            <div class="intro-content">
+
+                <h2>Kim cương nuôi cấy là gì?</h2>
+
+                <p>
+                    <strong>Whale</strong> mang đến những sản phẩm kim cương nuôi cấy
+                    được chế tác với sự kết hợp giữa công nghệ hiện đại và tinh thần
+                    thiết kế tinh tế. Kim cương nuôi cấy được tạo ra trong môi trường
+                    phòng thí nghiệm bằng công nghệ mô phỏng quá trình hình thành kim
+                    cương trong tự nhiên.
+                </p>
+
+                <p>
+                    Điểm khác biệt chủ yếu nằm ở <strong>nguồn gốc hình thành</strong>.
+                    Thay vì mất hàng tỷ năm để hình thành sâu trong lòng đất, kim cương
+                    nuôi cấy có thể được tạo ra trong thời gian ngắn hơn đáng kể nhờ
+                    công nghệ hiện đại.
+                </p>
+
+                <p>
+                    Tại <strong>Whale</strong>, chúng tôi hướng đến việc mang những
+                    thiết kế trang sức thanh lịch, hiện đại và dễ tiếp cận đến khách
+                    hàng. Từ những viên kim cương được tuyển chọn đến các thiết kế
+                    nhẫn, dây chuyền và trang sức tinh tế, mỗi sản phẩm đều được xây
+                    dựng với sự chú trọng đến <strong>chất lượng, thẩm mỹ và trải
+                        nghiệm của người sở hữu</strong>.
+                </p>
+
+                <p>
+                    Khám phá bộ sưu tập kim cương và trang sức của
+                    <strong>Whale</strong> để tìm thấy một thiết kế phù hợp với phong
+                    cách và câu chuyện riêng của bạn.
+                </p>
+
+            </div>
+
+        </section>
+
+    </section>
+    <div id="footer"></div>
+    <script>
+        fetch("components/header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header").innerHTML = data;
+
+                // Báo cho index.js biết header đã load xong
+                document.dispatchEvent(new Event("headerLoaded"));
+            });
+
+
+        fetch("components/footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+            });
+    </script>
+
+
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="components/header.js"></script>
+  
+</body>
+
+</html>

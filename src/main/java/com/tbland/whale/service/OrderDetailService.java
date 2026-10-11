@@ -8,6 +8,8 @@ import java.util.List;
 public interface OrderDetailService {
     List<OrderDetailResponse> getAll();
 
+    List<OrderDetailResponse> getByOrderId(Integer orderId);
+
     OrderDetailResponse create(OrderDetailRequest request);
 
     OrderDetailResponse update(Integer id, OrderDetailRequest request);

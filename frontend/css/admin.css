@@ -1,0 +1,278 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #222;
+}
+
+.admin-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* ================= SIDEBAR ================= */
+
+.sidebar {
+    width: 220px;
+    background-color: #111;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 25px 15px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 40px;
+}
+
+.logo span {
+    width: 35px;
+    height: 35px;
+
+    background-color: white;
+    color: #111;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: bold;
+    border-radius: 50%;
+}
+
+.logo h4 {
+    margin: 0;
+    font-size: 18px;
+}
+
+
+/* MENU */
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: #bbb;
+    text-decoration: none;
+
+    padding: 12px;
+    margin-bottom: 5px;
+
+    border-radius: 6px;
+
+    transition: 0.2s;
+}
+
+.menu-item:hover {
+    background-color: #222;
+    color: white;
+}
+
+.menu-item.active {
+    background-color: white;
+    color: #111;
+}
+
+.menu-item i {
+    font-size: 18px;
+}
+
+.logout {
+    margin-top: auto;
+}
+
+
+/* ================= MAIN ================= */
+
+.main-content {
+    flex: 1;
+}
+
+
+/* HEADER */
+
+.topbar {
+    height: 70px;
+
+    background-color: white;
+
+    border-bottom: 1px solid #ddd;
+
+    padding: 0 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.topbar h5 {
+    margin: 0;
+}
+
+.topbar span {
+    font-size: 13px;
+    color: #888;
+}
+
+.admin-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+/* ================= CONTENT ================= */
+
+.content {
+    padding: 30px;
+}
+
+.content h2 {
+    margin-bottom: 5px;
+}
+
+.description {
+    color: #888;
+    margin-bottom: 25px;
+}
+
+
+/* ================= STAT CARD ================= */
+
+.stat-card {
+    background-color: white;
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.stat-card p {
+    margin-bottom: 5px;
+    color: #888;
+}
+
+.stat-card h3 {
+    margin: 0;
+}
+
+.stat-card > i {
+    font-size: 30px;
+    color: #555;
+}
+
+
+/* ================= TABLE ================= */
+
+.card-box {
+    background-color: white;
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+    padding: 20px;
+}
+
+.card-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 15px;
+}
+
+.card-title h5 {
+    margin: 0;
+}
+
+.card-title a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+}
+
+.table {
+    margin: 0;
+}
+
+.table th {
+    font-size: 14px;
+    color: #666;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+
+/* ================= STATUS ================= */
+
+.status {
+    padding: 5px 10px;
+    border-radius: 20px;
+
+    font-size: 12px;
+}
+
+.completed {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.pending {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.shipping {
+    background-color: #e3f2fd;
+    color: #1565c0;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+    .sidebar {
+        width: 70px;
+        padding: 20px 10px;
+    }
+
+    .logo h4,
+    .menu-item span {
+        display: none;
+    }
+
+    .logo {
+        justify-content: center;
+    }
+
+    .menu-item {
+        justify-content: center;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+}

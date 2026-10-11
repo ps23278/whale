@@ -18,4 +18,6 @@ public interface ProductService {
     void delete(Integer id);
 
     List<ProductResponse> searchByName(String name);
+
+    List<ProductResponse> getByCategory(Integer categoryId);
 }

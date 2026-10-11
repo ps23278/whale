@@ -25,5 +25,6 @@ public class Order {
     private Account account;
     @Column(precision=15,scale=2)
     private BigDecimal totalAmount;
+    private String paymentMethod;
 
 }

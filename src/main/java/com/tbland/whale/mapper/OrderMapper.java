@@ -12,4 +12,5 @@ public interface OrderMapper {
 
     @Mapping(source = "account.id", target = "accountId")
     OrderResponse toResponse(Order order);
+
 }

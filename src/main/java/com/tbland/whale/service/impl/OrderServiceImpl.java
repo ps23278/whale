@@ -36,6 +36,14 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
+    public List<OrderResponse> getByAccountId(Integer accountId) {
+        return orderRepository.findByAccountId(accountId)
+                .stream()
+                .map(orderMapper::toResponse)
+                .toList();
+    }
+
+    @Override
     public OrderResponse findById(Integer id) {
         Order order = orderRepository.findById(id)
                 .orElse(null);
